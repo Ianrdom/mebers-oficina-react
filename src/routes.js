@@ -22,7 +22,11 @@ const Tab = createMaterialTopTabNavigator();
 function HomeRoutes() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen
+        name="Home"
+        options={{ headerShown: false }}
+        component={Home}
+      />
       <Stack.Screen name="Item" component={Item} />
     </Stack.Navigator>
   );

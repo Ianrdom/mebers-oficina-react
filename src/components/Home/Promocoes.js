@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Image, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 import api from "../../services/api";
+import { View } from "react-native-web";
 
 export default function Promocoes({ navigation }) {
   const [promocoes, setPromocoes] = useState([]);
@@ -15,9 +16,9 @@ export default function Promocoes({ navigation }) {
 
   return (
     <ScrollView
+      contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
       showsHorizontalScrollIndicator={false}
       horizontal
-      style={styles.lista}
     >
       {promocoes.map((promocao) => (
         <TouchableOpacity style={styles.item} key={promocao.id}>
@@ -33,6 +34,9 @@ const styles = StyleSheet.create({
     marginVertical: 20,
     marginHorizontal: 0,
     paddingLeft: 5,
+    display: "flex",
+    justifyContent: "center",
+    alignContent: "center",
   },
   item: {
     marginLeft: 15,
