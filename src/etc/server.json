@@ -1,0 +1,47 @@
+{
+  "suggestions": [
+    {
+      "id": 1,
+      "title": "Bebidas",
+      "sugg_url": "https://live.staticflickr.com/3567/3358256632_231074ae3c_c.jpg"
+    }
+  ],
+  "promotions": [
+    {
+      "id": 1,
+      "categorie": "OS MELHORES DO IFOOD",
+      "promo_url": "https://static-images.ifood.com.br/image/upload/f_auto,t_high/discoveries/ifood-capas-novas-super-restaurantes2.jpg"
+    }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "McOferta Big Mac",
+      "offer_url": "https://mcd-production.ams3.digitaloceanspaces.com/produtos/bigmac_62364267588f60a0780c9_7.jpg",
+      "price": 30.9,
+      "newPrice": 26.5,
+      "ingredients": "Ingredientes frescos",
+      "delivery": "McDonalds's | Bebedouro Shopping",
+      "delay": "45-90 min",
+      "icon": "store"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "title": "Brasileira",
+      "categorie_url": "https://farm4.static.flickr.com/3748/9699877429_68d829c600_c.jpg"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": 1,
+      "restaurant_url": "https://static-images.ifood.com.br/image/upload/f_auto,t_thumbnail/logosgde/201907222152_777201af-bd2b-456c-ba4c-f89d671a9b5e.png",
+      "title": "McDonald's",
+      "star": 4.7,
+      "categories": ["Lanches"],
+      "delay": "45-90 min",
+      "distance": "3.4 km"
+    }
+  ]
+}
