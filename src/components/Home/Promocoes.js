@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   imagem: {
-    width: Dimensions.get("window").width,
+    width: Dimensions.get("window").width - 10,
     height: 150,
     resizeMode: "stretch",
   },

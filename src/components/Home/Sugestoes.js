@@ -5,6 +5,7 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
+  View,
 } from "react-native";
 
 import api from "../../services/api";
@@ -27,7 +28,9 @@ export default function Sugestoes() {
       {sugestoes.map((sugestao) => (
         <TouchableOpacity style={styles.item} key={sugestao.id}>
           <Image source={{ uri: sugestao.sugg_url }} style={styles.imagem} />
-          <Text style={styles.titulo}>{sugestao.title}</Text>
+          <View style={styles.tituloContainer}>
+            <Text style={styles.titulo}>{sugestao.title}</Text>
+          </View>
         </TouchableOpacity>
       ))}
     </ScrollView>
@@ -48,11 +51,16 @@ const styles = StyleSheet.create({
     width: 300,
     height: 150,
   },
-  titulo: {
+  tituloContainer: {
     position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  titulo: {
     fontWeight: "bold",
     fontSize: 30,
     color: "white",

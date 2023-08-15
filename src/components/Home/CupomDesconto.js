@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     marginVertical: 0,
     marginHorizontal: 20,
+    marginBottom: 5,
   },
   divisor: {
     flexDirection: "row",
