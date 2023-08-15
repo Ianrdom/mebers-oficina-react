@@ -11,7 +11,7 @@ export default function Item({ route, navigation }) {
       <View style={styles.detalhe}></View>
       <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
       <Text style={styles.itemTitulo}>{item.title}</Text>
-      <Text style={styles.itemIngredientes}>{item.ingredients}</Text>
+
       <View style={styles.info}>
         <Text style={styles.itemPreco}>{item.newPrice}</Text>
         <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   itemImage: {
-    height: 180,
+    height: 350,
     borderRadius: 5,
   },
   itemTitulo: {

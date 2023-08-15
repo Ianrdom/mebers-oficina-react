@@ -8,7 +8,7 @@ import Sugestoes from "../../components/Home/Sugestoes";
 import Promocoes from "../../components/Home/Promocoes";
 import Ofertas from "../../components/Home/Ofertas";
 import Categorias from "../../components/Home/Categorias";
-import Restaurantes from "../../components/Home/Restaurantes";
+import Lojas from "../../components/Home/Lojas";
 
 export default function Home({ navigation }) {
   return (
@@ -20,7 +20,7 @@ export default function Home({ navigation }) {
       <Promocoes />
       <Ofertas navigation={navigation} />
       <Categorias />
-      <Restaurantes />
+      <Lojas />
     </ScrollView>
   );
 }

@@ -11,43 +11,34 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import api from "../../services/api";
 
-export default function Restaurantes() {
-  const [restaurantes, setRestaurantes] = useState([]);
+export default function Lojas() {
+  const [Lojas, setLojas] = useState([]);
 
   useEffect(() => {
-    async function carregarRestaurantes() {
-      const response = await api.get("restaurants");
-      setRestaurantes(response.data);
+    async function carregarLojas() {
+      const response = await api.get("sellers");
+      setLojas(response.data);
     }
-    carregarRestaurantes();
+    carregarLojas();
   }, []);
 
   return (
     <View style={styles.container}>
       <View>
-        <Text style={styles.titulo}>Restaurantes</Text>
+        <Text style={styles.titulo}>Lojas</Text>
       </View>
       <ScrollView style={styles.lista}>
-        {restaurantes.map((restaurante) => (
-          <TouchableOpacity style={styles.item} key={restaurante.id}>
-            <Image
-              source={{ uri: restaurante.restaurant_url }}
-              style={styles.imagem}
-            />
+        {Lojas.map((seller) => (
+          <TouchableOpacity style={styles.item} key={seller.id}>
+            <Image source={{ uri: seller.sellers_url }} style={styles.imagem} />
             <View style={styles.info}>
-              <Text style={styles.restauranteTitulo}>
-                {" "}
-                {restaurante.title}{" "}
-              </Text>
+              <Text style={styles.sellerTitulo}>{seller.title}</Text>
               <View style={styles.descricao}>
                 <MaterialIcons name="star" size={20} color="#FF7C01" />
-                <Text style={styles.estrela}>
-                  {restaurante.star || "Novo!"}
-                </Text>
-                <Text style={styles.categorias}> {restaurante.categories}</Text>
-                <Text style={styles.distancia}> {restaurante.distance}</Text>
+                <Text style={styles.estrela}>{seller.star || "Novo!"}</Text>
+                <Text style={styles.categorias}> {seller.categories}</Text>
+                <Text style={styles.distancia}> {seller.distance}</Text>
               </View>
-              <Text style={styles.atraso}> {restaurante.delay} </Text>
             </View>
           </TouchableOpacity>
         ))}
@@ -83,11 +74,12 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
+    resizeMode: "contain",
   },
   info: {
     marginLeft: 15,
   },
-  restauranteTitulo: {
+  sellerTitulo: {
     fontWeight: "bold",
     color: "#333",
   },

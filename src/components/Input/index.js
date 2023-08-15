@@ -5,7 +5,7 @@ import { TextInput, View, StyleSheet } from "react-native";
 export default function Input(props) {
   return (
     <View style={styles.container}>
-      <MaterialIcons name="search" size={25} color={"#FF5665"} />
+      <MaterialIcons name="search" size={25} color={"rgb(128, 0, 128)"} />
 
       <TextInput style={styles.textInput} placeholder={props.placeholder} />
     </View>

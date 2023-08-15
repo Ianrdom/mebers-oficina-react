@@ -19,7 +19,11 @@ export default function Sugestoes() {
     carregarSugestoes();
   }, []);
   return (
-    <ScrollView showsHorizontalScrollIndicator={false} style={styles.lista}>
+    <ScrollView
+      showsHorizontalScrollIndicator={false}
+      horizontal
+      style={styles.lista}
+    >
       {sugestoes.map((sugestao) => (
         <TouchableOpacity style={styles.item} key={sugestao.id}>
           <Image source={{ uri: sugestao.sugg_url }} style={styles.imagem} />
@@ -38,14 +42,22 @@ const styles = StyleSheet.create({
   item: {
     alignItems: "center",
     marginLeft: 15,
+    marginBottom: 10,
   },
   imagem: {
-    width: 120,
-    height: 200,
-    borderRadius: 5,
+    width: 300,
+    height: 150,
   },
   titulo: {
-    marginTop: 3,
-    color: "#999",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    fontWeight: "bold",
+    fontSize: 30,
+    color: "white",
+    textShadowColor: "black",
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 6,
   },
 });

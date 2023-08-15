@@ -37,8 +37,8 @@ export default function Ofertas({ navigation }) {
     <View style={styles.container}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.titulo}>Comida boa e barata!</Text>
-          <Text style={styles.subTitulo}>Pratos com frete grátis.</Text>
+          <Text style={styles.titulo}>Carros com desconto!</Text>
+          <Text style={styles.subTitulo}>Entrega com frete grátis!</Text>
         </View>
         <TouchableOpacity>
           <Text style={styles.vejaMais}>Ver mais</Text>
@@ -62,8 +62,10 @@ export default function Ofertas({ navigation }) {
               </Text>
               <View style={styles.itemPreco}>
                 <Text style={styles.preco}>{oferta.newPrice}</Text>
-                <Text style={styles.precoAntigo}>{oferta.price}</Text>
-                <MaterialIcons name="local-offer" size={15} color="#000" />
+                <Text style={styles.precoAntigo}>
+                  {oferta.price}{" "}
+                  <MaterialIcons name="local-offer" size={15} color="#000" />
+                </Text>
               </View>
             </View>
           </TouchableOpacity>
@@ -119,6 +121,7 @@ const styles = StyleSheet.create({
   },
   itemPreco: {
     flexDirection: "row",
+    flexWrap: "wrap",
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 10,
