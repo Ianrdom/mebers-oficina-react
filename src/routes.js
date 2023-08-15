@@ -84,8 +84,8 @@ export default function Routes() {
           }}
         />
         <BottomTab.Screen
-          name="PedidosRouter"
-          component={PedidosRouter}
+          name="Pedidos"
+          component={Pedidos}
           options={{
             tabBarLabel: "Pedidos",
             tabBarIcon: ({ color }) => (
@@ -94,7 +94,7 @@ export default function Routes() {
           }}
         />
         <BottomTab.Screen
-          name="PerfilRoutes"
+          name="Perfil"
           component={PerfilRoutes}
           options={{
             headerShown: false,

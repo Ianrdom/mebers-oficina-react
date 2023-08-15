@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   },
   item: {
     alignItems: "center",
-    marginLeft: 15,
+    marginLeft: 10,
     marginBottom: 10,
   },
   imagem: {

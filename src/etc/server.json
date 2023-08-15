@@ -22,40 +22,50 @@
     },
     {
       "id": 5,
-      "title": "Transmissões",
+      "title": "Suspensões",
       "sugg_url": "https://carsughi.uol.com.br/wp-content/uploads/2021/08/voce-sabe-como-e-feita-a-suspensao-de-um-carro.jpeg"
     },
     {
       "id": 6,
-      "title": "Parabrisa",
+      "title": "Vidros",
       "sugg_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH9-yCzgFVVBQHtKGXCMmC5Blcf_2reGRJfQ&usqp=CAU"
+    },
+    {
+      "id": 7,
+      "title": "Elétrica",
+      "sugg_url": "https://revistacarro.com.br/wp-content/uploads/2019/10/Chicote-el%C3%A9trico-Aptiv.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Body Kit",
+      "sugg_url": "https://ibherdesign.com/wp-content/uploads/2016/11/2128jpgw640q120.jpeg"
+    },
+    {
+      "id": 9,
+      "title": "Transmissões",
+      "sugg_url": "https://img.freepik.com/fotos-premium/componentes-e-pecas-do-motor-da-transmissao-automatica-do-carro-de-transporte-do-mecanismo-industrial_62754-3092.jpg?w=2000"
+    },
+    {
+      "id": 10,
+      "title": "Kit Forjado",
+      "sugg_url": "https://http2.mlstatic.com/D_NQ_NP_809125-MLB51582964015_092022-O.webp"
+    },
+    {
+      "id": 11,
+      "title": "Turbo",
+      "sugg_url": "https://blog.way.com/wp-content/uploads/2023/02/can-you-put-a-turbo-on-any-car.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Rodas",
+      "sugg_url": "https://cdn.spiritshop.com.br/dubstore/image/cache/data/up_system/product-577/jogo-de-rodas-gt-7-bbs-ch-18x7-preta-997-1500x1500.jpg"
     }
   ],
   "promotions": [
     {
       "id": 1,
       "categorie": "OS MELHORES DO CARROS",
-      "promo_url": "https://www.designi.com.br/images/preview/10146585.jpg"
-    },
-    {
-      "id": 2,
-      "categorie": "OS MELHORES DO CARROS",
-      "promo_url": "https://www.designi.com.br/images/preview/10146585.jpg"
-    },
-    {
-      "id": 3,
-      "categorie": "OS MELHORES DO CARROS",
-      "promo_url": "https://www.designi.com.br/images/preview/10146585.jpg"
-    },
-    {
-      "id": 4,
-      "categorie": "OS MELHORES DO CARROS",
-      "promo_url": "https://www.designi.com.br/images/preview/10146585.jpg"
-    },
-    {
-      "id": 5,
-      "categorie": "OS MELHORES DO CARROS",
-      "promo_url": "https://www.designi.com.br/images/preview/10146585.jpg"
+      "promo_url": "https://c8.alamy.com/comp/2FWNBXC/car-tire-sale-banner-buy-1-get-1-free-car-tyre-service-flyer-promo-background-tire-sale-advertising-2FWNBXC.jpg"
     }
   ],
   "offers": [
@@ -68,6 +78,76 @@
       "delivery": "Toyota Joinville",
       "delay": "45-90 min",
       "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Honda Civic SI 1995",
+      "offer_url": "https://armazemdovovo.com.br/images/anuncios/48516-seq-5-15-classico-0312.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Toyota Supra",
+      "offer_url": "https://i.pinimg.com/originals/d2/fe/a8/d2fea8c3df447855c09d704a75f4f957.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Honda Civic SI 1995",
+      "offer_url": "https://armazemdovovo.com.br/images/anuncios/48516-seq-5-15-classico-0312.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Toyota Supra",
+      "offer_url": "https://i.pinimg.com/originals/d2/fe/a8/d2fea8c3df447855c09d704a75f4f957.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Honda Civic SI 1995",
+      "offer_url": "https://armazemdovovo.com.br/images/anuncios/48516-seq-5-15-classico-0312.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Toyota Supra",
+      "offer_url": "https://i.pinimg.com/originals/d2/fe/a8/d2fea8c3df447855c09d704a75f4f957.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
+    },
+    {
+      "id": 1,
+      "title": "Honda Civic SI 1995",
+      "offer_url": "https://armazemdovovo.com.br/images/anuncios/48516-seq-5-15-classico-0312.jpg",
+      "price": 190000,
+      "newPrice": 180000,
+      "delivery": "Toyota Joinville",
+      "delay": "45-90 min",
+      "icon": "store"
     }
   ],
   "categories": [
@@ -75,6 +155,46 @@
       "id": 1,
       "title": "JDM",
       "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
+    },
+    {
+      "id": 1,
+      "title": "Alemães",
+      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Station Wagon",
+      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
+    },
+    {
+      "id": 1,
+      "title": "JDM",
+      "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
+    },
+    {
+      "id": 1,
+      "title": "Alemães",
+      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Station Wagon",
+      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
+    },
+    {
+      "id": 1,
+      "title": "JDM",
+      "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
+    },
+    {
+      "id": 1,
+      "title": "Alemães",
+      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
+    },
+    {
+      "id": 1,
+      "title": "Station Wagon",
+      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
     }
   ],
   "sellers": [
@@ -82,6 +202,14 @@
       "id": 1,
       "sellers_url": "https://logosmarcas.net/wp-content/uploads/2020/04/Toyota-Logo-1989-Presente.jpg",
       "title": "Toyota",
+      "star": 4.7,
+      "categories": ["Carros"],
+      "distance": "3.4 km"
+    },
+    {
+      "id": 2,
+      "sellers_url": "https://logodownload.org/wp-content/uploads/2014/09/honda-carros-logo-4.png",
+      "title": "Honda",
       "star": 4.7,
       "categories": ["Carros"],
       "distance": "3.4 km"

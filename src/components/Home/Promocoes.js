@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Image, TouchableOpacity, ScrollView, StyleSheet } from "react-native";
 import api from "../../services/api";
-import { View } from "react-native-web";
+import { Dimensions } from "react-native";
 
 export default function Promocoes({ navigation }) {
   const [promocoes, setPromocoes] = useState([]);
@@ -39,10 +39,12 @@ const styles = StyleSheet.create({
     alignContent: "center",
   },
   item: {
-    marginLeft: 15,
+    marginLeft: 5,
+    marginRight: 5,
   },
   imagem: {
-    width: 300,
+    width: Dimensions.get("window").width,
     height: 150,
+    resizeMode: "stretch",
   },
 });

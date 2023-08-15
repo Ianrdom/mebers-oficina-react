@@ -16,8 +16,8 @@ export default function Home({ navigation }) {
       <Endereco />
       <Input placeholder="Busque por item ou loja" />
       <CupomDesconto />
-      <Sugestoes />
       <Promocoes />
+      <Sugestoes />
       <Ofertas navigation={navigation} />
       <Categorias />
       <Lojas />
