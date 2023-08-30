@@ -1,7 +1,14 @@
 import React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { Image, ScrollView, Text, View, StyleSheet } from "react-native";
+import {
+  Image,
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 
 export default function Item({ route, navigation }) {
   const { item } = route.params;
@@ -9,12 +16,18 @@ export default function Item({ route, navigation }) {
   return (
     <ScrollView showsVerticalScrollIndicator={true} style={styles.container}>
       <View style={styles.detalhe}></View>
-      <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
-      <Text style={styles.itemTitulo}>{item.title}</Text>
-
-      <View style={styles.info}>
-        <Text style={styles.itemPreco}>{item.newPrice}</Text>
-        <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
+      <View style={styles.containerItem}>
+        <Text style={styles.itemTitulo}>{item.title}</Text>
+        <View style={styles.containerInfo}>
+          <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
+          <View style={styles.info}>
+            <Text style={styles.itemPreco}>{item.newPrice}</Text>
+            <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
+          </View>
+          <TouchableOpacity style={styles.botaoComprar}>
+            <Text>Comprar</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
       <View style={styles.entrega}>
@@ -38,13 +51,15 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
   },
   itemImage: {
-    height: 350,
+    height: 250,
+    width: 300,
+    resizeMode: "cover",
     borderRadius: 5,
   },
   itemTitulo: {
     fontSize: 32,
     color: "#333",
-    fontWeight: "bold",
+
     marginTop: 10,
   },
   itemIngredientes: {
@@ -57,15 +72,15 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   itemPrecoAntigo: {
-    marginLeft: 5,
     color: "#999",
     fontSize: 22,
     textDecorationLine: "line-through",
+    marginLeft: 5,
   },
   entrega: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
     marginTop: 20,
     borderWidth: 1,
     borderColor: "#eee",
@@ -82,5 +97,27 @@ const styles = StyleSheet.create({
   },
   entregaAtraso: {
     marginLeft: 10,
+  },
+  containerItem: {
+    marginLeft: 10,
+  },
+  // info: {
+  //   flexDirection: "row",
+  //   justifyContent: "space-between",
+  //   width: "60%",
+  // },
+  containerInfo: {
+    flexDirection: "column",
+  },
+  botaoComprar: {
+    backgroundColor: "rgb(52, 249, 86)",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "white",
+    padding: 10,
+    marginTop: 10,
+    marginLeft: 10,
+    height: "10%",
+    width: "30%",
   },
 });
