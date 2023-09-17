@@ -48,7 +48,13 @@ function PedidosRouter() {
 function PerfilRoutes() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Perfil" component={Perfil} />
+      <Stack.Screen
+        name="Perfil"
+        options={{
+          headerShown: false,
+        }}
+        component={Perfil}
+      />
       <Stack.Screen name="Pagamentos" component={Pagamentos} />
     </Stack.Navigator>
   );
@@ -61,12 +67,17 @@ export default function Routes() {
         screenOptions={{
           tabBarActiveTintColor: "purple",
           tabBarInactiveTintColor: "black",
+          tabBarStyle: {
+            backgroundColor: "#171c22",
+            borderTopColor: "171c22",
+          },
         }}
       >
         <BottomTab.Screen
           name="HomeRouter"
           component={HomeRoutes}
           options={{
+            headerShown: false,
             tabBarLabel: "Home",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="home" color={color} size={26} />
@@ -77,6 +88,7 @@ export default function Routes() {
           name="Busca"
           component={Busca}
           options={{
+            headerShown: false,
             tabBarLabel: "Busca",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="search" color={color} size={26} />
@@ -87,6 +99,7 @@ export default function Routes() {
           name="PedidosRouter"
           component={Pedidos}
           options={{
+            headerShown: false,
             tabBarLabel: "Pedidos",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="assignment" color={color} size={26} />

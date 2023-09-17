@@ -43,7 +43,7 @@ export default function Item({ route, navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "#171c22",
   },
   detalhe: {
     marginTop: 10,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   },
   itemIngredientes: {
     fontSize: 18,
-    color: "#999",
+    color: "#fff",
     marginTop: 10,
   },
   itemPreco: {
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   itemPrecoAntigo: {
-    color: "#999",
+    color: "#fff",
     fontSize: 22,
     textDecorationLine: "line-through",
     marginLeft: 5,

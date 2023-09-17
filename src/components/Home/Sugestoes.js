@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: "center",
     alignItems: "center",
+    color: "#fff",
   },
   titulo: {
     fontWeight: "bold",

@@ -1,5 +1,5 @@
 import React from "react";
-import { MaterialIcons } from "@expo/vector-icons";
+import { MaterialIcons, MaterialCommunityIcons } from "@expo/vector-icons";
 import { Image, Text, TouchableOpacity, View, StyleSheet } from "react-native";
 
 export default function CupomDesconto() {
@@ -7,9 +7,10 @@ export default function CupomDesconto() {
     <TouchableOpacity style={styles.cupom}>
       <View style={styles.divisor}>
         <View style={styles.conteudo}>
-          <Image
-            source={require("../../../assets/discount-coupon.png")}
-            style={styles.logo}
+          <MaterialCommunityIcons
+            name="ticket-percent"
+            color={"#ff6500"}
+            size={35}
           />
           <View style={styles.info}>
             <Text style={styles.titulo}>Cupom de R$10</Text>
@@ -18,7 +19,7 @@ export default function CupomDesconto() {
         </View>
         <MaterialIcons
           name="keyboard-arrow-right"
-          color={"#FF5665"}
+          color={"#ff6500"}
           size={20}
         />
       </View>
@@ -56,9 +57,10 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontWeight: "bold",
+    color: "#ff6500",
   },
   validade: {
     marginTop: 5,
-    color: "#999",
+    color: "#ff6500",
   },
 });

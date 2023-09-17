@@ -123,7 +123,7 @@ export default function Perfil({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#171c22",
   },
   option: {
     flexDirection: "row",
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   description: {
     fontSize: 16,
-    color: "#999",
+    color: "#fff",
   },
   menuAdicional: {
     marginTop: 30,

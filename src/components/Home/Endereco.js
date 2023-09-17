@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   localizacao: {
-    color: "#333",
+    color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
   },

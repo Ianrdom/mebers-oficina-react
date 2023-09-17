@@ -7,7 +7,11 @@ export default function Input(props) {
     <View style={styles.container}>
       <MaterialIcons name="search" size={25} color={"rgb(128, 0, 128)"} />
 
-      <TextInput style={styles.textInput} placeholder={props.placeholder} />
+      <TextInput
+        style={styles.textInput}
+        placeholderTextColor="#fff"
+        placeholder={props.placeholder}
+      />
     </View>
   );
 }
@@ -25,5 +29,6 @@ const styles = StyleSheet.create({
   textInput: {
     paddingVertical: 15,
     paddingHorizontal: 20,
+    color: "#fff",
   },
 });

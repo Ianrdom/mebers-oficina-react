@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontSize: 23,
+    color: "#fff",
     fontWeight: "bold",
   },
   lista: {
@@ -72,6 +73,6 @@ const styles = StyleSheet.create({
   categoriaTitulo: {
     fontSize: 16,
     marginTop: 10,
-    color: "#999",
+    color: "#fff",
   },
 });

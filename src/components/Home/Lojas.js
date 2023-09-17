@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 23,
     fontWeight: "bold",
+    color: "#fff",
   },
   lista: {
     marginTop: 10,
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
   },
   sellerTitulo: {
     fontWeight: "bold",
-    color: "#333",
+    color: "#fff",
   },
   descricao: {
     flexDirection: "row",
@@ -90,19 +91,19 @@ const styles = StyleSheet.create({
   },
   estrela: {
     fontSize: 14,
-    color: "#999",
+    color: "#fff",
   },
   categorias: {
     fontSize: 14,
-    color: "#999",
+    color: "#fff",
   },
   distancia: {
     fontSize: 14,
-    color: "#999",
+    color: "#fff",
   },
   atraso: {
     marginTop: 15,
     fontSize: 14,
-    color: "#999",
+    color: "#fff",
   },
 });
