@@ -9,7 +9,7 @@ export default function CupomDesconto() {
         <View style={styles.conteudo}>
           <MaterialCommunityIcons
             name="ticket-percent"
-            color={"#ff6500"}
+            color={"#fff"}
             size={35}
           />
           <View style={styles.info}>
@@ -17,11 +17,7 @@ export default function CupomDesconto() {
             <Text style={styles.validade}>Válido até as 17:30</Text>
           </View>
         </View>
-        <MaterialIcons
-          name="keyboard-arrow-right"
-          color={"#ff6500"}
-          size={20}
-        />
+        <MaterialIcons name="keyboard-arrow-right" color={"#fff"} size={20} />
       </View>
     </TouchableOpacity>
   );
@@ -36,8 +32,8 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     paddingHorizontal: 15,
     marginVertical: 0,
-    marginHorizontal: 20,
     marginBottom: 5,
+    width: "100%",
   },
   divisor: {
     flexDirection: "row",
@@ -57,10 +53,10 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontWeight: "bold",
-    color: "#ff6500",
+    color: "#fff",
   },
   validade: {
     marginTop: 5,
-    color: "#ff6500",
+    color: "#fff",
   },
 });

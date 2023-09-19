@@ -8,7 +8,7 @@ import { createMaterialTopTabNavigator } from "@react-navigation/material-top-ta
 import { MaterialIcons } from "@expo/vector-icons";
 
 import Home from "./screens/Home";
-import Busca from "./screens/Busca";
+import Carrinho from "./screens/Carrinho";
 import Perfil from "./screens/Perfil";
 import Pedidos from "./screens/Pedidos";
 import PedidosAnteriores from "./screens/PedidosAnteriores";
@@ -65,11 +65,11 @@ export default function Routes() {
     <NavigationContainer>
       <BottomTab.Navigator
         screenOptions={{
-          tabBarActiveTintColor: "purple",
-          tabBarInactiveTintColor: "black",
+          tabBarActiveTintColor: "#ff6500",
+          tabBarInactiveTintColor: "grey",
           tabBarStyle: {
             backgroundColor: "#171c22",
-            borderTopColor: "171c22",
+            borderTopColor: "#171c22",
           },
         }}
       >
@@ -86,12 +86,12 @@ export default function Routes() {
         />
         <BottomTab.Screen
           name="Busca"
-          component={Busca}
+          component={Carrinho}
           options={{
             headerShown: false,
-            tabBarLabel: "Busca",
+            tabBarLabel: "Carrinho",
             tabBarIcon: ({ color }) => (
-              <MaterialIcons name="search" color={color} size={26} />
+              <MaterialIcons name="shopping-cart" color={color} size={26} />
             ),
           }}
         />
