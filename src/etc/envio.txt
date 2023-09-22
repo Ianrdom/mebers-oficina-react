@@ -1,1 +1,1 @@
-json-server -H 191.52.55.x src/etc/server.json -p 19003
+json-server -H 0.0.0.0 src/etc/server.json -p 19003
