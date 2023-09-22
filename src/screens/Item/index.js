@@ -8,42 +8,63 @@ import {
   View,
   StyleSheet,
   TouchableOpacity,
+  TextInput,
 } from "react-native";
 
 export default function Item({ route, navigation }) {
   const { item } = route.params;
 
   return (
-    <ScrollView showsVerticalScrollIndicator={true} style={styles.container}>
-      <View style={styles.detalhe}></View>
-      <View style={styles.containerItem}>
-        <Text style={styles.itemTitulo}>{item.title}</Text>
-        <View style={styles.containerInfo}>
-          <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
-          <View style={styles.info}>
-            <Text style={styles.itemPreco}>{item.newPrice}</Text>
-            <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
-          </View>
-          <TouchableOpacity style={styles.botaoComprar}>
-            <Text>Comprar</Text>
-          </TouchableOpacity>
-        </View>
+    <View style={styles.container}>
+      <View style={styles.containerInput}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("Home")}
+        >
+          <MaterialIcons name="arrow-back-ios" size={25} color="orange" />
+        </TouchableOpacity>
+
+        <TextInput
+          style={styles.textInput}
+          placeholderTextColor="#fff"
+          placeholder={"Faça a sua pesquisa"}
+        />
+        <MaterialIcons name="search" size={25} color={"orange"} />
       </View>
 
-      <View style={styles.entrega}>
-        <View style={styles.wrapper}>
-          <MaterialIcons name={item.icon} size={22} color="#F01" />
-          <Text style={styles.entregaTitulo}>{item.delivery}</Text>
+      <ScrollView showsVerticalScrollIndicator={true}>
+        <View style={styles.detalhe}></View>
+
+        <View style={styles.containerItem}>
+          <Text style={styles.itemTitulo}>{item.title}</Text>
+          <View style={styles.containerInfo}>
+            <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
+            <View style={styles.info}>
+              <Text style={styles.itemPreco}>{item.newPrice}</Text>
+              <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
+            </View>
+            <TouchableOpacity style={styles.botaoComprar}>
+              <Text>Comprar</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        <Text style={styles.entregaAtraso}>{item.delay}</Text>
-      </View>
-    </ScrollView>
+
+        <View style={styles.entrega}>
+          <View style={styles.wrapper}>
+            <MaterialIcons name={item.icon} size={22} color="#F01" />
+            <Text style={styles.entregaTitulo}>{item.delivery}</Text>
+          </View>
+          <Text style={styles.entregaAtraso}>{item.delay}</Text>
+        </View>
+      </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#171c22",
+    height: "100%",
   },
   detalhe: {
     marginTop: 10,
@@ -101,11 +122,7 @@ const styles = StyleSheet.create({
   containerItem: {
     marginLeft: 10,
   },
-  // info: {
-  //   flexDirection: "row",
-  //   justifyContent: "space-between",
-  //   width: "60%",
-  // },
+
   containerInfo: {
     flexDirection: "column",
   },
@@ -119,5 +136,21 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     height: "10%",
     width: "30%",
+  },
+
+  containerInput: {
+    background: "#EEE",
+    height: "auto",
+    flexDirection: "row",
+    alignItems: "center",
+    margin: 20,
+    paddingLeft: 10,
+    borderRadius: 4,
+    width: "auto",
+  },
+  textInput: {
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+    color: "#fff",
   },
 });

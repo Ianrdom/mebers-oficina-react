@@ -27,7 +27,11 @@ function HomeRoutes() {
         options={{ headerShown: false }}
         component={Home}
       />
-      <Stack.Screen name="Item" component={Item} />
+      <Stack.Screen
+        name="Item"
+        options={{ headerShown: false }}
+        component={Item}
+      />
     </Stack.Navigator>
   );
 }
