@@ -21,7 +21,7 @@ export default function Item({ route, navigation }) {
           style={styles.button}
           onPress={() => navigation.navigate("Home")}
         >
-          <MaterialIcons name="arrow-back-ios" size={25} color="orange" />
+          <MaterialIcons name="arrow-back-ios" size={25} color="#ff6500" />
         </TouchableOpacity>
 
         <TextInput
@@ -29,7 +29,7 @@ export default function Item({ route, navigation }) {
           placeholderTextColor="#fff"
           placeholder={"Faça a sua pesquisa"}
         />
-        <MaterialIcons name="search" size={25} color={"orange"} />
+        <MaterialIcons name="search" size={25} color={"#ff6500"} />
       </View>
 
       <ScrollView showsVerticalScrollIndicator={true}>
@@ -75,11 +75,13 @@ export default function Item({ route, navigation }) {
         </View>
       </ScrollView>
       <View style={styles.bottomMenu}>
-        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+        <View style={{ flexDirection: "row", height: "50%" }}>
           <View
             style={{
               flexDirection: "column",
-              height: "50%",
+              width: "100%",
+              alignItems: "flex-end",
+              justifyContent: "center",
             }}
           >
             <Text
@@ -95,6 +97,20 @@ export default function Item({ route, navigation }) {
               Ou em até 2x de {item.newPrice / 2} sem juros
             </Text>
           </View>
+        </View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            marginHorizontal: "3%",
+          }}
+        >
+          <TouchableOpacity style={styles.adicionarCarrinho}>
+            <Text style={{ color: "#ff6500" }}>Adicionar no Carrinho</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.botaoComprar}>
+            <Text style={{ color: "white" }}>Comprar</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -162,15 +178,15 @@ const styles = StyleSheet.create({
     flexDirection: "column",
   },
   botaoComprar: {
-    backgroundColor: "rgb(52, 249, 86)",
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    marginRight: 10,
+    backgroundColor: "green",
+    width: "45%",
+    fontWeight: "bold",
+    borderRadius: 5,
     justifyContent: "center",
-    alignItems: "center",
-    color: "white",
-    padding: 20,
-    marginTop: 10,
-    marginLeft: 10,
-    height: "10%",
-    width: "30%",
   },
 
   containerInput: {
@@ -187,6 +203,7 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 20,
     color: "#fff",
+    width: "80%",
   },
   curtida: {
     padding: 10,
@@ -209,10 +226,22 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   bottomMenu: {
-    flexDirection: "row",
+    flexDirection: "column",
     backgroundColor: "#101214",
     height: 150,
     width: "100%",
     marginTop: 10,
+  },
+  adicionarCarrinho: {
+    borderColor: "#ff6500",
+    borderWidth: 1,
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    marginRight: 10,
+    width: "45%",
+    fontWeight: "bold",
+    borderRadius: 5,
+    justifyContent: "center",
   },
 });
