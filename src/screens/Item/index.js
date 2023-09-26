@@ -36,27 +36,67 @@ export default function Item({ route, navigation }) {
         <View style={styles.detalhe}></View>
 
         <View style={styles.containerItem}>
-          <Text style={styles.itemTitulo}>{item.title}</Text>
           <View style={styles.containerInfo}>
             <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
-            <View style={styles.info}>
-              <Text style={styles.itemPreco}>{item.newPrice}</Text>
-              <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
+            <View style={{ marginHorizontal: 10 }}>
+              <View style={styles.opcoes}>
+                <TouchableOpacity style={styles.curtida}>
+                  <MaterialIcons
+                    name="favorite-border"
+                    size={15}
+                    color="white"
+                  />
+                  <Text style={{ color: "white", fontSize: 12 }}>
+                    Adicionar aos favoritos
+                  </Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.compartilhar}>
+                  <MaterialIcons name="share" size={15} color="white" />
+                  <Text style={{ color: "white", fontSize: 12 }}>
+                    Compartilhar
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.info}>
+                <Text style={styles.itemTitulo}>{item.title}</Text>
+                <View style={{ alignSelf: "flex-end" }}>
+                  <Text style={{ color: "white" }}>
+                    Adicionar estrelas aqui
+                  </Text>
+                </View>
+                <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
+                <Text style={styles.itemPreco}>{item.newPrice}</Text>
+                <Text style={{ color: "grey", fontSize: 15 }}>
+                  Ou em até 2x de {item.newPrice / 2} sem juros
+                </Text>
+              </View>
             </View>
-            <TouchableOpacity style={styles.botaoComprar}>
-              <Text>Comprar</Text>
-            </TouchableOpacity>
           </View>
-        </View>
-
-        <View style={styles.entrega}>
-          <View style={styles.wrapper}>
-            <MaterialIcons name={item.icon} size={22} color="#F01" />
-            <Text style={styles.entregaTitulo}>{item.delivery}</Text>
-          </View>
-          <Text style={styles.entregaAtraso}>{item.delay}</Text>
         </View>
       </ScrollView>
+      <View style={styles.bottomMenu}>
+        <View style={{ flexDirection: "row", justifyContent: "flex-end" }}>
+          <View
+            style={{
+              flexDirection: "column",
+              height: "50%",
+            }}
+          >
+            <Text
+              style={{
+                color: "white",
+                fontSize: 18,
+                fontWeight: "bold",
+              }}
+            >
+              {item.newPrice}
+            </Text>
+            <Text style={{ color: "grey", fontSize: 15 }}>
+              Ou em até 2x de {item.newPrice / 2} sem juros
+            </Text>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
@@ -73,14 +113,15 @@ const styles = StyleSheet.create({
   },
   itemImage: {
     height: 250,
-    width: 300,
+    width: 250,
     resizeMode: "cover",
     borderRadius: 5,
+    alignSelf: "center",
   },
   itemTitulo: {
-    fontSize: 32,
-    color: "#333",
-
+    fontSize: 20,
+    color: "white",
+    fontWeight: "bold",
     marginTop: 10,
   },
   itemIngredientes: {
@@ -89,14 +130,14 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   itemPreco: {
-    color: "green",
-    fontSize: 22,
+    color: "white",
+    fontSize: 23,
+    fontWeight: "bold",
   },
   itemPrecoAntigo: {
-    color: "#fff",
-    fontSize: 22,
+    color: "grey",
+    fontSize: 15,
     textDecorationLine: "line-through",
-    marginLeft: 5,
   },
   entrega: {
     flexDirection: "row",
@@ -112,13 +153,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
   },
-  entregaTitulo: {
-    fontSize: 15,
-    color: "red",
-  },
-  entregaAtraso: {
-    marginLeft: 10,
-  },
+
   containerItem: {
     marginLeft: 10,
   },
@@ -131,7 +166,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     color: "white",
-    padding: 10,
+    padding: 20,
     marginTop: 10,
     marginLeft: 10,
     height: "10%",
@@ -152,5 +187,32 @@ const styles = StyleSheet.create({
     paddingVertical: 15,
     paddingHorizontal: 20,
     color: "#fff",
+  },
+  curtida: {
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    marginLeft: 10,
+    backgroundColor: "#383f47",
+    borderRadius: 30,
+  },
+  compartilhar: {
+    padding: 10,
+    marginVertical: 10,
+    flexDirection: "row",
+    marginRight: 10,
+    backgroundColor: "#383f47",
+    borderRadius: 30,
+  },
+  opcoes: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  bottomMenu: {
+    flexDirection: "row",
+    backgroundColor: "#101214",
+    height: 150,
+    width: "100%",
+    marginTop: 10,
   },
 });
