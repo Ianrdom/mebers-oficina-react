@@ -12,33 +12,29 @@ import {
 import api from "../../services/api";
 import { formatNumber } from "../../helpers/formatNumber";
 
-export default function Ofertas({ navigation }) {
-  const [ofertas, setOfertas] = useState([]);
+export default function produtos({ navigation }) {
+  const [produtos, setprodutos] = useState([]);
   useEffect(() => {
-    async function carregarOfertas() {
-      const response = await api.get("offers");
-      const data = response.data.map((offer) => ({
-        id: offer.id,
-        offer_url: offer.offer_url,
-        title: offer.title,
-        priceOriginalFormat: offer.price,
-        newPrice: formatNumber(offer.newPrice),
-        price: formatNumber(offer.price),
-        ingredients: offer.ingredients,
-        delivery: offer.delivery,
-        delay: offer.delay,
-        icon: offer.icon,
+    async function carregarprodutos() {
+      const response = await api.get("produtos");
+      const data = response.data.map((produto) => ({
+        id: produto.id,
+        produto_url: produto.imagens.imagem,
+        nome: produto.nome,
+        precoRAW: produto.preco,
+        preco: formatNumber(produto.preco),
       }));
-      setOfertas(data);
+      console.log(data);
+      setprodutos(data);
     }
-    carregarOfertas();
+    carregarprodutos();
   }, []);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.titulo}>Abaixaram o preço!</Text>
+          <Text style={styles.titulo}>Produtos Novos!</Text>
         </View>
         <TouchableOpacity>
           <Text style={styles.vejaMais}>Ver mais</Text>
@@ -49,23 +45,23 @@ export default function Ofertas({ navigation }) {
         horizontal
         style={styles.lista}
       >
-        {ofertas.map((oferta) => (
+        {produtos.map((produto) => (
           <TouchableOpacity
             style={styles.item}
-            key={oferta.id}
-            onPress={() => navigation.navigate("Item", { item: oferta })}
+            key={produto.id}
+            onPress={() => navigation.navigate("Item", { item: produto })}
           >
-            <Image source={{ uri: oferta.offer_url }} style={styles.imagem} />
+            <Image
+              source={{ uri: produto.produto_url }}
+              style={styles.imagem}
+            />
+
             <View style={styles.info}>
               <Text numberOfLines={2} style={styles.tituloItem}>
-                {oferta.title}
+                {produto.nome}
               </Text>
               <View style={styles.itemPreco}>
-                <Text style={styles.precoAntigo}>
-                  {oferta.price}
-                  <MaterialIcons name="local-offer" size={12} color="grey" />
-                </Text>
-                <Text style={styles.preco}>{oferta.newPrice}</Text>
+                <Text style={styles.preco}>{produto.preco}</Text>
               </View>
               <Text
                 style={{
@@ -167,12 +163,5 @@ const styles = StyleSheet.create({
     color: "#ff6500",
     fontWeight: "bold",
     fontSize: 18,
-  },
-  precoAntigo: {
-    marginLeft: 5,
-    fontWeight: "bold",
-    color: "grey",
-    fontSize: 12,
-    textDecorationLine: "line-through",
   },
 });

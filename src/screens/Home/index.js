@@ -18,8 +18,8 @@ export default function Home({ navigation }) {
         showsHorizontalScrollIndicator={true}
         style={styles.container}
       >
-        <Promocoes />
-        <Categorias />
+        {/* <Promocoes />
+        <Categorias /> */}
         <Ofertas navigation={navigation} />
       </ScrollView>
     </View>
