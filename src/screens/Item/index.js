@@ -67,7 +67,7 @@ export default function Item({ route, navigation }) {
                 <Text style={styles.itemPrecoAntigo}>{item.price}</Text>
                 <Text style={styles.itemPreco}>{item.newPrice}</Text>
                 <Text style={{ color: "grey", fontSize: 15 }}>
-                  Ou em até 2x de {item.newPrice / 2} sem juros
+                  Ou em até 2x de {item.priceOriginalFormat} sem juros
                 </Text>
               </View>
             </View>

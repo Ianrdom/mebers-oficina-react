@@ -8,6 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 import api from "../../services/api";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Categorias() {
   const [categorias, setCategorias] = useState([]);
@@ -32,9 +33,19 @@ export default function Categorias() {
       >
         {categorias.map((categoria) => (
           <TouchableOpacity key={categoria.id} style={styles.item}>
-            <Image
-              source={{ uri: categoria.categorie_url }}
-              style={styles.imagem}
+            <MaterialIcons
+              style={{
+                borderColor: "white",
+                borderWidth: 1,
+                borderRadius: 20,
+                paddingHorizontal: 3.5,
+                paddingVertical: 2,
+                justifyContent: "center",
+                alignContent: "center",
+              }}
+              name="directions-car"
+              size={24}
+              color="white"
             />
             <Text style={styles.categoriaTitulo}>{categoria.title}</Text>
           </TouchableOpacity>

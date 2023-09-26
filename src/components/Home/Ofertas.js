@@ -21,6 +21,7 @@ export default function Ofertas({ navigation }) {
         id: offer.id,
         offer_url: offer.offer_url,
         title: offer.title,
+        priceOriginalFormat: offer.price,
         newPrice: formatNumber(offer.newPrice),
         price: formatNumber(offer.price),
         ingredients: offer.ingredients,
@@ -66,7 +67,14 @@ export default function Ofertas({ navigation }) {
                 </Text>
                 <Text style={styles.preco}>{oferta.newPrice}</Text>
               </View>
-              <Text style={{ marginBottom: 5, color: "grey", fontSize: 12,alignSelf: "center" }}>
+              <Text
+                style={{
+                  marginBottom: 5,
+                  color: "grey",
+                  fontSize: 12,
+                  alignSelf: "center",
+                }}
+              >
                 Em até 12x Sem Juros
               </Text>
               <TouchableOpacity

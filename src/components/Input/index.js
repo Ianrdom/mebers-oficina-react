@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
     height: "auto",
     flexDirection: "row",
     alignItems: "center",
-    margin: 20,
+    marginHorizontal: 20,
+    marginTop: 30,
     paddingLeft: 10,
     borderRadius: 4,
+    marginBottom: 0,
   },
   textInput: {
     paddingVertical: 15,

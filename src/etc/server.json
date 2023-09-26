@@ -153,48 +153,15 @@
   "categories": [
     {
       "id": 1,
-      "title": "JDM",
-      "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
+      "title": "JDM"
     },
     {
       "id": 2,
-      "title": "Alemães",
-      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
+      "title": "Alemães"
     },
     {
       "id": 3,
-      "title": "Station Wagon",
-      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
-    },
-    {
-      "id": 4,
-      "title": "JDM",
-      "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
-    },
-    {
-      "id": 5,
-      "title": "Alemães",
-      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Station Wagon",
-      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
-    },
-    {
-      "id": 7,
-      "title": "JDM",
-      "categorie_url": "https://www.agoramotor.com.br/wp-content/uploads/2023/04/nissan-vai-transformar-skyline-gt-r-projeto-r32-ev.webp"
-    },
-    {
-      "id": 8,
-      "title": "Alemães",
-      "categorie_url": "https://www.wunderwelt-a.com.br/wp-content/uploads/2021/01/Carros-na-Alemanha-1.jpg"
-    },
-    {
-      "id": 9,
-      "title": "Station Wagon",
-      "categorie_url": "https://media.autoexpress.co.uk/image/private/s--5XK9dO1S--/f_auto,t_content-image-full-mobile@1/v1562242185/autoexpress/2016/02/59888_245_glt_uk_1981.jpg"
+      "title": "Station Wagon"
     }
   ],
   "sellers": [
