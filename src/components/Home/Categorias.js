@@ -38,13 +38,12 @@ export default function Categorias() {
                 borderColor: "white",
                 borderWidth: 1,
                 borderRadius: 20,
-                paddingHorizontal: 3.5,
-                paddingVertical: 2,
+                padding: 5,
                 justifyContent: "center",
                 alignContent: "center",
               }}
               name="directions-car"
-              size={24}
+              size={30}
               color="white"
             />
             <Text style={styles.categoriaTitulo}>{categoria.title}</Text>
