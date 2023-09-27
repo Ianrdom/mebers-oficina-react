@@ -15,9 +15,10 @@ export default function Categorias() {
 
   useEffect(() => {
     async function carregarCategorias() {
-      const response = await api.get("categories");
+      const response = await api.get("categorias");
       setCategorias(response.data);
     }
+    console.log(categorias);
     carregarCategorias();
   }, []);
 
@@ -35,10 +36,6 @@ export default function Categorias() {
           <TouchableOpacity key={categoria.id} style={styles.item}>
             <MaterialIcons
               style={{
-                borderColor: "white",
-                borderWidth: 1,
-                borderRadius: 20,
-                padding: 5,
                 justifyContent: "center",
                 alignContent: "center",
               }}
@@ -46,7 +43,7 @@ export default function Categorias() {
               size={30}
               color="white"
             />
-            <Text style={styles.categoriaTitulo}>{categoria.title}</Text>
+            <Text style={styles.categoriaTitulo}>{categoria.descricao}</Text>
           </TouchableOpacity>
         ))}
       </ScrollView>

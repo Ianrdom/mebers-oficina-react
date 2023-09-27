@@ -13,6 +13,7 @@ import {
 
 export default function Item({ route, navigation }) {
   const { item } = route.params;
+  const imagens = item.imagens;
 
   return (
     <View style={styles.container}>
@@ -37,7 +38,20 @@ export default function Item({ route, navigation }) {
 
         <View style={styles.containerItem}>
           <View style={styles.containerInfo}>
-            <Image style={styles.itemImage} source={{ uri: item.offer_url }} />
+            <ScrollView
+              showsHorizontalScrollIndicator={false}
+              horizontal
+              style={styles.slideImage}
+            >
+              {imagens.map((imagem) => (
+                <Image
+                  style={styles.itemImage}
+                  source={{ uri: imagem.imagem.url }}
+                  key={imagem.id}
+                />
+              ))}
+            </ScrollView>
+
             <View style={{ marginHorizontal: 10 }}>
               <View style={styles.opcoes}>
                 <TouchableOpacity style={styles.curtida}>
@@ -58,16 +72,16 @@ export default function Item({ route, navigation }) {
                 </TouchableOpacity>
               </View>
               <View style={styles.info}>
-                <Text style={styles.itemTitulo}>{item.title}</Text>
+                <Text style={styles.itemTitulo}>{item.nome}</Text>
                 <View style={{ alignSelf: "flex-end" }}>
                   <Text style={{ color: "white" }}>
                     Adicionar estrelas aqui
                   </Text>
                 </View>
 
-                <Text style={styles.itemPreco}>{item.newPrice}</Text>
+                <Text style={styles.itemPreco}>{item.preco}</Text>
                 <Text style={{ color: "grey", fontSize: 15 }}>
-                  Ou em até 2x de {item.newPrice} sem juros
+                  Ou em até 2x de {parseInt(item.precoRAW) / 2} sem juros
                 </Text>
               </View>
             </View>
@@ -91,10 +105,10 @@ export default function Item({ route, navigation }) {
                 fontWeight: "bold",
               }}
             >
-              {item.newPrice}
+              {item.preco}
             </Text>
             <Text style={{ color: "grey", fontSize: 15 }}>
-              Ou em até 2x de {item.newPrice / 2} sem juros
+              Ou em até 2x de {item.precoRAW / 2} sem juros
             </Text>
           </View>
         </View>

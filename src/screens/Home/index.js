@@ -3,8 +3,8 @@ import React from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import Endereco from "../../components/Home/Endereco";
 import Input from "../../components/Input";
-import Promocoes from "../../components/Home/Promocoes";
-import Ofertas from "../../components/Home/Ofertas";
+
+import Produtos from "../../components/Home/Produtos";
 import Categorias from "../../components/Home/Categorias";
 
 export default function Home({ navigation }) {
@@ -18,9 +18,8 @@ export default function Home({ navigation }) {
         showsHorizontalScrollIndicator={true}
         style={styles.container}
       >
-        {/* <Promocoes />
-        <Categorias /> */}
-        <Ofertas navigation={navigation} />
+        <Categorias />
+        <Produtos navigation={navigation} />
       </ScrollView>
     </View>
   );

@@ -14,17 +14,19 @@ import { formatNumber } from "../../helpers/formatNumber";
 
 export default function produtos({ navigation }) {
   const [produtos, setprodutos] = useState([]);
+
   useEffect(() => {
     async function carregarprodutos() {
       const response = await api.get("produtos");
       const data = response.data.map((produto) => ({
         id: produto.id,
-        produto_url: produto.imagens.imagem,
+        capa: produto.imagens.find((imagem) => imagem.principal).imagem.url,
+        imagens: produto.imagens,
         nome: produto.nome,
         precoRAW: produto.preco,
         preco: formatNumber(produto.preco),
       }));
-      console.log(data);
+
       setprodutos(data);
     }
     carregarprodutos();
@@ -51,10 +53,7 @@ export default function produtos({ navigation }) {
             key={produto.id}
             onPress={() => navigation.navigate("Item", { item: produto })}
           >
-            <Image
-              source={{ uri: produto.produto_url }}
-              style={styles.imagem}
-            />
+            <Image source={{ uri: produto.capa }} style={styles.imagem} />
 
             <View style={styles.info}>
               <Text numberOfLines={2} style={styles.tituloItem}>
@@ -145,7 +144,7 @@ const styles = StyleSheet.create({
   },
   imagem: {
     height: 120,
-    resizeMode: "stretch",
+    resizeMode: "contain",
     backgroundColor: "#000",
   },
   info: {
