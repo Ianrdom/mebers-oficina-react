@@ -18,7 +18,7 @@ export default function Categorias() {
       const response = await api.get("categorias");
       setCategorias(response.data);
     }
-    console.log(categorias);
+
     carregarCategorias();
   }, []);
 

@@ -9,7 +9,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 
 import Home from "./screens/Home";
 import Carrinho from "./screens/Carrinho";
-import Perfil from "./screens/Perfil";
+import Login from "./screens/Login";
 import Pedidos from "./screens/Pedidos";
 import PedidosAnteriores from "./screens/PedidosAnteriores";
 import Pagamentos from "./screens/Pagamentos";
@@ -49,20 +49,20 @@ function PedidosRouter() {
   );
 }
 
-function PerfilRoutes() {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Perfil"
-        options={{
-          headerShown: false,
-        }}
-        component={Perfil}
-      />
-      <Stack.Screen name="Pagamentos" component={Pagamentos} />
-    </Stack.Navigator>
-  );
-}
+// function PerfilRoutes() {
+//   return (
+//     <Stack.Navigator>
+//       <Stack.Screen
+//         name="Perfil"
+//         options={{
+//           headerShown: false,
+//         }}
+//         component={Perfil}
+//       />
+//       <Stack.Screen name="Pagamentos" component={Pagamentos} />
+//     </Stack.Navigator>
+//   );
+// }
 
 export default function Routes() {
   return (
@@ -111,11 +111,11 @@ export default function Routes() {
           }}
         />
         <BottomTab.Screen
-          name="PerfilRouter"
-          component={PerfilRoutes}
+          name="Login"
+          component={Login}
           options={{
             headerShown: false,
-            tabBarLabel: "Perfil",
+            tabBarLabel: "Login",
             tabBarIcon: ({ color }) => (
               <MaterialIcons name="person" color={color} size={26} />
             ),
