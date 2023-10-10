@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://oficina-mebers-django-exy5-dev.fl0.io/api",
+  baseURL: "http://191.52.55.187:19003/api/",
 });
 
 export default api;

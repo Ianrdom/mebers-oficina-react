@@ -12,7 +12,8 @@ import Carrinho from "./screens/Carrinho";
 import Login from "./screens/Login";
 import Pedidos from "./screens/Pedidos";
 import PedidosAnteriores from "./screens/PedidosAnteriores";
-import Pagamentos from "./screens/Pagamentos";
+// import Pagamentos from "./screens/Pagamentos";
+// import Perfil from "./screens/Perfil";
 import Item from "./screens/Item";
 
 const BottomTab = createBottomTabNavigator();

@@ -6,8 +6,8 @@ import { useSetRecoilState } from "recoil";
 import api from "../../services/api";
 import { userState } from "../../services/recoilAuth";
 export default function Login({ navigation }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("aluno@aluno.com");
+  const [password, setPassword] = useState("aluno");
   const [errorMsg, setErrorMsg] = useState(null);
 
   const setUser = useSetRecoilState(userState);
@@ -28,7 +28,7 @@ export default function Login({ navigation }) {
 
   const login = async () => {
     try {
-      const data = await LoginApi.login(email, password);
+      const data = await new LoginApi().login(email, password);
       setUser({
         loggedIn: true,
         access: data.access,
