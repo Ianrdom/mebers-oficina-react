@@ -81,7 +81,7 @@ export default function Login({ navigation }) {
       >
         Entrar
       </Button>
-      <Text>{errorMsg}</Text>
+      <Text style={{ color: "#FFFF" }}>{errorMsg}</Text>
     </View>
   );
 }
