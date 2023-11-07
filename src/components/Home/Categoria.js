@@ -35,7 +35,7 @@ export default function Categorias({ navigation }) {
         {categorias.map((categoria) => (
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("Categoria", { item: categoria })
+              navigation.navigate("Categoria", { categoria: categoria })
             }
             key={categoria.id}
             style={styles.item}

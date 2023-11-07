@@ -13,13 +13,13 @@ import {
 
 import api from "../../services/api";
 import { formatNumber } from "../../helpers/formatNumber";
-export default function Item({ route, navigation }) {
+export default function Categoria({ route, navigation }) {
   const { categoria } = route.params;
   const [produtos, setprodutos] = useState([]);
 
   useEffect(() => {
     async function carregarprodutos() {
-      const response = await api.get("produtos/?categoria=1");
+      const response = await api.get(`produtos/?categoria=${categoria.id}`);
       const data = response.data.map((produto) => ({
         id: produto.id,
         capa: produto.imagens.find((imagem) => imagem.principal).imagem.url,
@@ -46,7 +46,9 @@ export default function Item({ route, navigation }) {
       <View style={styles.container}>
         <View style={styles.header}>
           <View>
-            <Text style={styles.titulo}>Produtos da categoria Pneu</Text>
+            <Text style={styles.titulo}>
+              Produtos da categoria {categoria.descricao}
+            </Text>
           </View>
           <TouchableOpacity>
             <Text style={styles.vejaMais}>Ver mais</Text>
