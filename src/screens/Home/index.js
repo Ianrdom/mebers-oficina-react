@@ -5,7 +5,7 @@ import Endereco from "../../components/Home/Endereco";
 import Input from "../../components/Input";
 
 import Produtos from "../../components/Home/Produtos";
-import Categorias from "../../components/Home/Categorias";
+import Categoria from "../../components/Home/Categoria";
 
 export default function Home({ navigation }) {
   return (
@@ -18,7 +18,7 @@ export default function Home({ navigation }) {
         showsHorizontalScrollIndicator={true}
         style={styles.container}
       >
-        <Categorias />
+        <Categoria navigation={navigation} />
         <Produtos navigation={navigation} />
       </ScrollView>
     </View>

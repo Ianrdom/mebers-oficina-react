@@ -10,7 +10,7 @@ import {
 import api from "../../services/api";
 import { MaterialIcons } from "@expo/vector-icons";
 
-export default function Categorias() {
+export default function Categorias({ navigation }) {
   const [categorias, setCategorias] = useState([]);
 
   useEffect(() => {
@@ -33,7 +33,13 @@ export default function Categorias() {
         style={styles.lista}
       >
         {categorias.map((categoria) => (
-          <TouchableOpacity key={categoria.id} style={styles.item}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("Categoria", { item: categoria })
+            }
+            key={categoria.id}
+            style={styles.item}
+          >
             <MaterialIcons
               style={{
                 justifyContent: "center",

@@ -19,18 +19,18 @@ export default function Item({ route, navigation }) {
     <View style={styles.container}>
       <View style={styles.containerInput}>
         <TouchableOpacity
-          style={styles.button}
+          style={{ marginTop: 10 }}
           onPress={() => navigation.navigate("Home")}
         >
           <MaterialIcons name="arrow-back-ios" size={25} color="#ff6500" />
         </TouchableOpacity>
 
-        <TextInput
+        {/* <TextInput
           style={styles.textInput}
           placeholderTextColor="#fff"
           placeholder={"Faça a sua pesquisa"}
         />
-        <MaterialIcons name="search" size={25} color={"#ff6500"} />
+        <MaterialIcons name="search" size={25} color={"#ff6500"} /> */}
       </View>
 
       <ScrollView showsVerticalScrollIndicator={true}>

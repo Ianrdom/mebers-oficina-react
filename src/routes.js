@@ -15,6 +15,7 @@ import PedidosAnteriores from "./screens/PedidosAnteriores";
 // import Pagamentos from "./screens/Pagamentos";
 // import Perfil from "./screens/Perfil";
 import Item from "./screens/Item";
+import Categoria from "./screens/Categoria";
 
 const BottomTab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,6 +33,11 @@ function HomeRoutes() {
         name="Item"
         options={{ headerShown: false }}
         component={Item}
+      />
+      <Stack.Screen
+        name="Categoria"
+        options={{ headerShown: false }}
+        component={Categoria}
       />
     </Stack.Navigator>
   );
