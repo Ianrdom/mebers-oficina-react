@@ -6,9 +6,18 @@ import {
   View,
   StyleSheet,
 } from "react-native";
+import * as SecureStore from "expo-secure-store";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { useSetRecoilState, useRecoilValue } from "recoil";
+import { userState } from "../../services/recoilAuth";
 
 export default function Perfil({ navigation }) {
+  const setUser = useSetRecoilState(userState);
+
+  const logout = async () => {
+    setUser({ loggedIn: false, access_token: null, refresh_token: null });
+    await SecureStore.deleteItemAsync("access_token");
+  };
   return (
     <ScrollView style={styles.container}>
       <ScrollView>
@@ -22,10 +31,7 @@ export default function Perfil({ navigation }) {
           </ScrollView>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.option}
-          onPress={() => navigation.navigate("Pagamentos")}
-        >
+        <TouchableOpacity style={styles.option}>
           <MaterialCommunityIcons name="credit-card" size={35} color="#333" />
           <ScrollView style={styles.info}>
             <Text style={styles.title}>Pagamentos</Text>
@@ -108,10 +114,13 @@ export default function Perfil({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.opcoesAdicionais}>
+        <TouchableOpacity
+          style={styles.opcoesAdicionais}
+          onPress={() => logout()}
+        >
           <View style={styles.wrapper}>
             <MaterialCommunityIcons name="rocket" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Seja parceiro!</Text>
+            <Text style={styles.optionName}>Logout</Text>
           </View>
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
@@ -124,6 +133,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#171c22",
+    paddingTop: 20,
   },
   option: {
     flexDirection: "row",

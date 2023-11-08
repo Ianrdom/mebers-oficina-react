@@ -5,15 +5,16 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
+import { useRecoilValue } from "recoil";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import { userState } from "./services/recoilAuth";
 import Home from "./screens/Home";
 import Carrinho from "./screens/Carrinho";
 import Login from "./screens/Login";
 import Pedidos from "./screens/Pedidos";
 import PedidosAnteriores from "./screens/PedidosAnteriores";
 // import Pagamentos from "./screens/Pagamentos";
-// import Perfil from "./screens/Perfil";
+import Perfil from "./screens/Perfil";
 import Item from "./screens/Item";
 import Categoria from "./screens/Categoria";
 
@@ -72,6 +73,7 @@ function PedidosRouter() {
 // }
 
 export default function Routes() {
+  const currentUserState = useRecoilValue(userState);
   return (
     <NavigationContainer>
       <BottomTab.Navigator
@@ -117,17 +119,32 @@ export default function Routes() {
             ),
           }}
         />
-        <BottomTab.Screen
-          name="Login"
-          component={Login}
-          options={{
-            headerShown: false,
-            tabBarLabel: "Login",
-            tabBarIcon: ({ color }) => (
-              <MaterialIcons name="person" color={color} size={26} />
-            ),
-          }}
-        />
+
+        {currentUserState.loggedIn ? (
+          <BottomTab.Screen
+            name="Perfil"
+            options={{
+              headerShown: false,
+              tabBarLabel: "Perfil",
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="person" color={color} size={26} />
+              ),
+            }}
+            component={Perfil}
+          />
+        ) : (
+          <BottomTab.Screen
+            name="Login"
+            component={Login}
+            options={{
+              headerShown: false,
+              tabBarLabel: "Login",
+              tabBarIcon: ({ color }) => (
+                <MaterialIcons name="person" color={color} size={26} />
+              ),
+            }}
+          />
+        )}
       </BottomTab.Navigator>
     </NavigationContainer>
   );

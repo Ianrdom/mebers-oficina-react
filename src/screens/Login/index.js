@@ -38,7 +38,7 @@ export default function Login({ navigation }) {
       setPassword("");
       setErrorMsg(null);
       await SecureStore.setItemAsync("access", data.access);
-      navigation.goBack();
+      navigation.navigate("Perfil");
     } catch (error) {
       setUser({ loggedIn: false, access: null, refresh: null });
       setErrorMsg("Email ou senha inválidos!");
