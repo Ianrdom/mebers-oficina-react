@@ -26,7 +26,8 @@
     "react-native-paper": "^5.10.6",
     "react-native-tab-view": "^3.5.2",
     "react-native-web": "~0.18.10",
-    "recoil": "^0.7.7"
+    "recoil": "^0.7.7",
+    "recoil-nexus": "^0.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

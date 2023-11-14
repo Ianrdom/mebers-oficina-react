@@ -98,7 +98,7 @@ export default function Routes() {
           }}
         />
         <BottomTab.Screen
-          name="Busca"
+          name="Carrinho"
           component={Carrinho}
           options={{
             headerShown: false,

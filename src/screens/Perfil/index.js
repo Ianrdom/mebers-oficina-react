@@ -21,6 +21,7 @@ export default function Perfil({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <ScrollView>
+        <Text></Text>
         <TouchableOpacity style={styles.option} onPress={() => {}}>
           <MaterialCommunityIcons name="bell-outline" size={35} color="#333" />
           <ScrollView style={styles.info}>
@@ -114,15 +115,11 @@ export default function Perfil({ navigation }) {
           <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={styles.opcoesAdicionais}
-          onPress={() => logout()}
-        >
+        <TouchableOpacity style={styles.logout} onPress={() => logout()}>
           <View style={styles.wrapper}>
-            <MaterialCommunityIcons name="rocket" size={25} color="#CDC" />
-            <Text style={styles.optionName}>Logout</Text>
+            <MaterialCommunityIcons name="logout" size={25} color="#CDC" />
+            <Text style={styles.logoutName}>Logout</Text>
           </View>
-          <MaterialIcons name="keyboard-arrow-right" color="#999" size={20} />
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -181,6 +178,26 @@ const styles = StyleSheet.create({
   },
   optionName: {
     marginLeft: 25,
+    color: "#ccc",
+    fontSize: 15,
+  },
+  logout: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 0,
+    marginRight: 0,
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
+    border: 1,
+    backgroundColor: "#e74c3c",
+  },
+  logoutName: {
+    marginLeft: 10,
     color: "#ccc",
     fontSize: 15,
   },

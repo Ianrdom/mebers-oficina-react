@@ -3,10 +3,12 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import { RecoilRoot } from "recoil";
 import Routes from "./src/routes";
+import RecoilNexus from "recoil-nexus";
 
 export default function App() {
   return (
     <RecoilRoot>
+      <RecoilNexus />
       <Fragment>
         <StatusBar style="auto" />
         <Routes />
