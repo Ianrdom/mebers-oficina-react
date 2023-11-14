@@ -97,28 +97,32 @@ export default function Routes() {
             ),
           }}
         />
-        <BottomTab.Screen
-          name="Carrinho"
-          component={Carrinho}
-          options={{
-            headerShown: false,
-            tabBarLabel: "Carrinho",
-            tabBarIcon: ({ color }) => (
-              <MaterialIcons name="shopping-cart" color={color} size={26} />
-            ),
-          }}
-        />
-        <BottomTab.Screen
-          name="PedidosRouter"
-          component={Pedidos}
-          options={{
-            headerShown: false,
-            tabBarLabel: "Pedidos",
-            tabBarIcon: ({ color }) => (
-              <MaterialIcons name="assignment" color={color} size={26} />
-            ),
-          }}
-        />
+        {currentUserState.loggedIn && (
+          <>
+            <BottomTab.Screen
+              name="Carrinho"
+              component={Carrinho}
+              options={{
+                headerShown: false,
+                tabBarLabel: "Carrinho",
+                tabBarIcon: ({ color }) => (
+                  <MaterialIcons name="shopping-cart" color={color} size={26} />
+                ),
+              }}
+            />
+            <BottomTab.Screen
+              name="PedidosRouter"
+              component={Pedidos}
+              options={{
+                headerShown: false,
+                tabBarLabel: "Pedidos",
+                tabBarIcon: ({ color }) => (
+                  <MaterialIcons name="assignment" color={color} size={26} />
+                ),
+              }}
+            />
+          </>
+        )}
 
         {currentUserState.loggedIn ? (
           <BottomTab.Screen
