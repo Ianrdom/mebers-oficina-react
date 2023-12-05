@@ -10,11 +10,40 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-
+import api from "../../services/api";
+import { userState } from "../../services/recoilAuth";
+import { useSetRecoilState } from "recoil";
 export default function Item({ route, navigation }) {
   const { item } = route.params;
   const imagens = item.imagens;
+  const setUser = useSetRecoilState(userState);
+  class ComprarApi {
+    async comprar(item, usuario) {
+      try {
+        const { data } = await api.post("/compras/", {
+          usuario: 1,
+          itens: [
+            {
+              item,
+              quantidade: 1,
+            },
+          ],
+        });
+        return Promise.resolve(data);
+      } catch (error) {
+        return Promise.error(error);
+      }
+    }
+  }
 
+  const comprar = async () => {
+    try {
+      await new ComprarApi().comprar(item.id, 1);
+      console.log("compra bem sucedida");
+    } catch (error) {
+      console.log("compra mal sucedida");
+    }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.containerInput}>
@@ -24,13 +53,6 @@ export default function Item({ route, navigation }) {
         >
           <MaterialIcons name="arrow-back-ios" size={25} color="#ff6500" />
         </TouchableOpacity>
-
-        {/* <TextInput
-          style={styles.textInput}
-          placeholderTextColor="#fff"
-          placeholder={"Faça a sua pesquisa"}
-        />
-        <MaterialIcons name="search" size={25} color={"#ff6500"} /> */}
       </View>
 
       <ScrollView showsVerticalScrollIndicator={true}>
@@ -115,14 +137,14 @@ export default function Item({ route, navigation }) {
         <View
           style={{
             flexDirection: "row",
-            justifyContent: "space-between",
+            justifyContent: "flex-end",
             marginHorizontal: "3%",
           }}
         >
-          <TouchableOpacity style={styles.adicionarCarrinho}>
-            <Text style={{ color: "#ff6500" }}>Adicionar no Carrinho</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.botaoComprar}>
+          <TouchableOpacity
+            style={styles.botaoComprar}
+            onPress={() => comprar()}
+          >
             <Text style={{ color: "white" }}>Comprar</Text>
           </TouchableOpacity>
         </View>

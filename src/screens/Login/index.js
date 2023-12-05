@@ -26,9 +26,15 @@ export default function Login({ navigation }) {
     }
   }
 
+  const parseJwt = (token) => {
+    return JSON.parse(Buffer.from(token.split(".")[1], "base64").toString());
+  };
+
   const login = async () => {
     try {
       const data = await new LoginApi().login(email, password);
+      const { user_id } = parseJwt(data.access);
+      console.log(user_id);
       setUser({
         loggedIn: true,
         access: data.access,

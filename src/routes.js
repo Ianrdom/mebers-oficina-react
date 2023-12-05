@@ -9,7 +9,6 @@ import { useRecoilValue } from "recoil";
 import { MaterialIcons } from "@expo/vector-icons";
 import { userState } from "./services/recoilAuth";
 import Home from "./screens/Home";
-import Carrinho from "./screens/Carrinho";
 import Login from "./screens/Login";
 import Pedidos from "./screens/Pedidos";
 import PedidosAnteriores from "./screens/PedidosAnteriores";
@@ -86,27 +85,16 @@ export default function Routes() {
           },
         }}
       >
-        <BottomTab.Screen
-          name="HomeRouter"
-          component={HomeRoutes}
-          options={{
-            headerShown: false,
-            tabBarLabel: "Home",
-            tabBarIcon: ({ color }) => (
-              <MaterialIcons name="home" color={color} size={26} />
-            ),
-          }}
-        />
         {currentUserState.loggedIn && (
           <>
             <BottomTab.Screen
-              name="Carrinho"
-              component={Carrinho}
+              name="HomeRouter"
+              component={HomeRoutes}
               options={{
                 headerShown: false,
-                tabBarLabel: "Carrinho",
+                tabBarLabel: "Home",
                 tabBarIcon: ({ color }) => (
-                  <MaterialIcons name="shopping-cart" color={color} size={26} />
+                  <MaterialIcons name="home" color={color} size={26} />
                 ),
               }}
             />
