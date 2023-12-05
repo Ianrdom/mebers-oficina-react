@@ -5,6 +5,7 @@ import * as SecureStore from "expo-secure-store";
 import { useSetRecoilState } from "recoil";
 import api from "../../services/api";
 import { userState } from "../../services/recoilAuth";
+global.Buffer = require("buffer").Buffer;
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("aluno@aluno.com");
   const [password, setPassword] = useState("aluno");
@@ -39,6 +40,7 @@ export default function Login({ navigation }) {
         loggedIn: true,
         access: data.access,
         refresh: data.refresh,
+        user_id: user_id,
       });
       setEmail("");
       setPassword("");

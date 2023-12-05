@@ -17,11 +17,12 @@ export default function Item({ route, navigation }) {
   const { item } = route.params;
   const imagens = item.imagens;
   const setUser = useSetRecoilState(userState);
+  console.log(setUser);
   class ComprarApi {
     async comprar(item, usuario) {
       try {
         const { data } = await api.post("/compras/", {
-          usuario: 1,
+          usuario,
           itens: [
             {
               item,
