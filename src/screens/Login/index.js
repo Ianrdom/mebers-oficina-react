@@ -35,7 +35,6 @@ export default function Login({ navigation }) {
     try {
       const data = await new LoginApi().login(email, password);
       const { user_id } = parseJwt(data.access);
-      console.log(user_id);
       setUser({
         loggedIn: true,
         access: data.access,

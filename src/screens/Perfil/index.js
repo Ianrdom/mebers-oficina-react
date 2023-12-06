@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ScrollView,
   Text,
@@ -10,9 +10,20 @@ import * as SecureStore from "expo-secure-store";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
 import { useSetRecoilState, useRecoilValue } from "recoil";
 import { userState } from "../../services/recoilAuth";
-
+import { getRecoil } from "recoil-nexus";
+import api from "../../services/api";
 export default function Perfil({ navigation }) {
   const setUser = useSetRecoilState(userState);
+  const currentUser = getRecoil(userState).user_id;
+  const [usuario, setusuario] = useState([]);
+
+  useEffect(() => {
+    async function carregarusuario() {
+      const { data } = await api.get(`usuarios/${currentUser}`);
+      setusuario(data);
+    }
+    carregarusuario();
+  }, []);
 
   const logout = async () => {
     setUser({ loggedIn: false, access_token: null, refresh_token: null });
@@ -21,7 +32,9 @@ export default function Perfil({ navigation }) {
   return (
     <ScrollView style={styles.container}>
       <ScrollView>
-        <Text></Text>
+        <Text style={{ marginLeft: 30, marginTop: 20, color: "white" }}>
+          Usuário: {usuario.email}
+        </Text>
         <TouchableOpacity style={styles.option} onPress={() => {}}>
           <MaterialCommunityIcons name="bell-outline" size={35} color="#333" />
           <ScrollView style={styles.info}>

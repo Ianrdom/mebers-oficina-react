@@ -13,19 +13,20 @@ import {
 import api from "../../services/api";
 import { userState } from "../../services/recoilAuth";
 import { useSetRecoilState } from "recoil";
+import { getRecoil } from "recoil-nexus";
 export default function Item({ route, navigation }) {
   const { item } = route.params;
+  const currentUser = getRecoil(userState).user_id;
   const imagens = item.imagens;
   const setUser = useSetRecoilState(userState);
-  console.log(setUser);
   class ComprarApi {
     async comprar(item, usuario) {
       try {
         const { data } = await api.post("/compras/", {
-          usuario,
+          usuario: usuario,
           itens: [
             {
-              item,
+              produto: item,
               quantidade: 1,
             },
           ],
@@ -39,7 +40,7 @@ export default function Item({ route, navigation }) {
 
   const comprar = async () => {
     try {
-      await new ComprarApi().comprar(item.id, 1);
+      await new ComprarApi().comprar(item.id, currentUser);
       console.log("compra bem sucedida");
     } catch (error) {
       console.log("compra mal sucedida");

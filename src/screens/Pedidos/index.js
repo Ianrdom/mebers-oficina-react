@@ -12,7 +12,7 @@ export default function Pedidos() {
 
     carregarPedidos();
   }, []);
-  console.log(pedidos);
+  // console.log(pedidos);
   return (
     <View style={styles.container}>
       <Text style={styles.aviso}>Você ainda não fez nenhum pedido</Text>
