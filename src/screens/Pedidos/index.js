@@ -15,7 +15,14 @@ export default function Pedidos() {
   // console.log(pedidos);
   return (
     <View style={styles.container}>
-      <Text style={styles.aviso}>Você ainda não fez nenhum pedido</Text>
+      {/* <Text style={styles.aviso}>Você ainda não fez nenhum pedido</Text> */}
+      {pedidos.map((pedido) => (
+        <View style={styles.pedidoContainer}>
+          <Text key={pedido.id} style={{ color: "white" }}>
+            Id do pedido: {pedido.id}
+          </Text>
+        </View>
+      ))}
     </View>
   );
 }
@@ -31,5 +38,8 @@ const styles = StyleSheet.create({
     marginTop: 25,
     fontSize: 18,
     color: "#333",
+  },
+  pedidoContainer: {
+    backgroundColor: "grey",
   },
 });
