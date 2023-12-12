@@ -33,6 +33,7 @@ export default function Item({ route, navigation }) {
         });
         return Promise.resolve(data);
       } catch (error) {
+        console.log(error);
         return Promise.error(error);
       }
     }

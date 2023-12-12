@@ -1,38 +1,53 @@
-import React, { useEffect, useState } from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import React, { useEffect, useState, useCallback } from "react";
+import {
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  RefreshControl,
+  ScrollView,
+} from "react-native";
 import api from "../../services/api";
 
 export default function Pedidos() {
+  const [refreshing, setRefreshing] = useState(false);
   const [pedidos, setPedidos] = useState([]);
-  useEffect(() => {
-    async function carregarPedidos() {
-      const response = await api.get("compras");
-      setPedidos(response.data);
-    }
 
+  const carregarPedidos = async () => {
+    const response = await api.get("compras");
+    setPedidos(response.data);
+  };
+  useEffect(() => {
     carregarPedidos();
   }, []);
-  // console.log(pedidos);
+  const onRefresh = useCallback(async () => {
+    setRefreshing(true);
+    await carregarPedidos();
+    setRefreshing(false);
+  }, []);
   return (
     <View style={styles.container}>
-      {/* <Text style={styles.aviso}>Você ainda não fez nenhum pedido</Text> */}
-      {pedidos.map((pedido) => (
-        <View style={styles.pedidoContainer}>
-          <Text key={pedido.id} style={{ color: "white" }}>
-            Id do pedido: {pedido.id}
-          </Text>
-        </View>
-      ))}
+      <ScrollView
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+        }
+      >
+        {pedidos.map((pedido) => (
+          <View key={pedido.id} style={styles.pedidoContainer}>
+            <Text style={{ color: "white" }}>Id do pedido: {pedido.id}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: "#171c22",
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: 100,
   },
   aviso: {
     marginTop: 25,

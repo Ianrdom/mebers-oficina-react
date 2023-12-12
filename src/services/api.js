@@ -2,7 +2,7 @@ import axios from "axios";
 import { userState } from "../services/recoilAuth";
 import { getRecoil } from "recoil-nexus";
 const api = axios.create({
-  baseURL: "http://191.52.55.187:19003/api/",
+  baseURL: "http://191.52.55.168:19003/api/",
   headers: {
     "Content-Type": "application/json",
   },
