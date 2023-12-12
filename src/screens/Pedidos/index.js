@@ -28,6 +28,7 @@ export default function Pedidos() {
   return (
     <View style={styles.container}>
       <ScrollView
+        style={{ height: "100%" }}
         refreshControl={
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
